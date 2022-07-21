@@ -33,9 +33,7 @@ async def send_welcome(message: types.Message):
 async def echo(message: types.Message):
     # old style:
     # await bot.send_message(message.chat.id, message.text)
-    print(message)
     msg = message.text
-    print(msg.isascii)
     if msg.isascii():
         response = to_cyrillic(msg)
         await message.answer(response)
